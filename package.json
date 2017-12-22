@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build & set NODE_ENV=dev & npm run serve-api",
-    "start-dev": "set NODE_ENV=prod & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
+    "start": "npm run build & set NODE_ENV=prod & npm run serve-api",
+    "start-dev": "set NODE_ENV=dev & concurrently --kill-others \"npm run serve-api\" \"npm run serve --no-progress\"",
     "build": "ng build --ouput-path=public",
     "test": "ng test",
     "lint": "ng lint",
@@ -28,7 +28,11 @@
     "concurrently": "^3.5.0",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
     "less": "^2.7.3",
+    "mongoose": "^4.13.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

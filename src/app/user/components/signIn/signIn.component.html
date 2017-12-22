@@ -1,0 +1,17 @@
+<div class="signin-container">
+    <div class="signin-wrapper">
+        <div class="signin-form-group">
+            <label class="signin-form-label">Login</label>
+            <input name="log" class="signin-form-field" autocomplete="off" type="text" [(ngModel)]="userCredentials.username" />
+        </div>
+
+        <div class="signin-form-group">
+            <label class="signin-form-label">Password</label>
+            <input name="pass" class="signin-form-field" autocomplete="off" type="password" [(ngModel)]="userCredentials.password" />
+        </div>
+
+        <div class="signin-form-group">
+            <button class="signin-form-button" (click)="signIn()">Send</button>
+        </div>
+    </div>
+</div>

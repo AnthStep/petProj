@@ -1,3 +1,9 @@
-<p>
-  header works!
-</p>
+<ul class="header-list">
+  <li class="header-item"><img class="header-logo" src="./assets/images/logo.svg"/></li>
+  <li class="header-item"><a routerLink="/home" class="header-link" [routerLinkActive]="'active'">Home</a></li>
+  <li class="header-item" *ngIf="authService.isAuthenticated"><a class="header-link" routerLink="/private" [routerLinkActive]="'active'">Private Board</a></li>
+  <li class="header-item" *ngIf="!authService.isAuthenticated"><a class="header-link" routerLink="/signup" [routerLinkActive]="'active'">Sign Up</a></li>
+  <li class="header-item" *ngIf="!authService.isAuthenticated"><a class="header-link" routerLink="/signin" [routerLinkActive]="'active'">Sign In</a></li>
+  <li class="header-item" *ngIf="authService.isAuthenticated"><a class="header-link" routerLink="/projects" [routerLinkActive]="'active'">Projects</a></li>
+  <li class="header-item" *ngIf="authService.isAuthenticated"><button class="header-button" (click)="authService.signOut()">Sign Out</button></li>
+</ul>

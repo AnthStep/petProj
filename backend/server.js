@@ -3,14 +3,24 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const passport = require('./passport/strategy.passport').passport;
+
+//Connect to connect to a MongoDB database
+
+mongoose.connect('mongodb://localhost/board');
 
 // Get our API routes
-const api = require('./routes/api');
 const app = express();
 
+app.use(passport.initialize());
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Set our api routes
+require('./routes')(app);
+
 
 //Return index.html only in production mode (process.env.NODE_ENV set up in package.json)
 if (process.env.NODE_ENV == "prod") {
@@ -27,9 +37,6 @@ if (process.env.NODE_ENV == "prod") {
         res.send("API running in development mode (only `/api` routes)");
     });
 }
-
-// Set our api routes
-app.use('/api', api);
 
 /**
  * Get port from environment and store in Express.

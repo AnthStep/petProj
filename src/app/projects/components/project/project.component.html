@@ -1,0 +1,21 @@
+<div class="projects-container">
+    <div class="projects-wrapper">
+        <div class="projects-menu">
+            <ul class="projects-menu-list">
+                <li class="projects-menu-item">
+                    <a routerLink="/projects/createProject" [routerLinkActive]="'active'" class="projects-menu-link" >
+                        Create project
+                    </a>
+                </li>
+                <li class="projects-menu-item">
+                    <a routerLink="/projects/projectList" [routerLinkActive]="'active'" class="projects-menu-link">
+                        Project List
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="projects-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

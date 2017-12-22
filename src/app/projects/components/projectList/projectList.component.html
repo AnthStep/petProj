@@ -1,0 +1,14 @@
+<div class="project-list-container">
+    <div class="project-list-wrapper">
+        <ul class="project-list-projects">
+            <h1>Project List</h1>
+            <li *ngFor="let project of projects" class="project-list-project">
+                <p><span><b>{{project.title}}</b>({{project.code}})</span></p>
+                <span *ngIf="project.participants.length">participants:</span>
+                <ul class="project-list-users">
+                    <li *ngFor="let user of project.participants" class="project-list-user">{{user.username}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

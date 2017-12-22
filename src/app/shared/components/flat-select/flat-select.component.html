@@ -1,0 +1,16 @@
+<div class="flat-select-container">
+    <div class="flat-select-wrapper">
+        <div class="flat-select-col flat-select-all">
+            <h4>All</h4>
+            <ul class="flat-select-list all">
+                <li *ngFor="let item of filteredList" (click)="toResult(item)" class="flat-select-list-item">{{item[label]}}</li>
+            </ul>
+        </div>
+        <div class="flat-select-col flat-select-selected">
+            <h4>Selected</h4>
+            <ul class="flat-select-list selected">
+                <li *ngFor="let item of result" (click)="removeFromResult(item)" class="flat-select-list-item">{{item[label]}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

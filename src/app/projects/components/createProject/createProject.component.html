@@ -1,0 +1,19 @@
+<div class="create-project-container">
+    <div class="create-project-wrapper">
+        <div class="create-project-form-group">
+            <label for="" class="create-project-form-field">Project title</label>
+            <input type="text" [(ngModel)]="newProject.title" class="create-project-form-field">
+        </div>
+        <div class="create-project-form-group">
+            <label for="" class="create-project-form-field">Project code</label>
+            <input type="text" [(ngModel)]="newProject.code" class="create-project-form-field">
+        </div>
+        <div class="create-project-form-group">
+            <label for="" class="create-project-form-field">Participants</label>
+            <element-flat-select [result]="selectedUsers" [list]="users" [label]="'username'" [id]="'_id'"></element-flat-select>
+        </div>
+        <div class="create-project-form-group">
+            <button type="button" (click)="saveProject()" class="create-project-form-button">Create Project</button>
+        </div>
+    </div>
+</div>
